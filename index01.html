@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Fotos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f9;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .gallery a {
+            display: block;
+            width: calc(50% - 8px);
+            text-decoration: none;
+            color: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        .gallery img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .caption {
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+        @media (max-width: 700px) {
+            .gallery a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Galeria de Fotos com Links</h1>
+    <div class="gallery">
+        <a href="page1.html">
+            <img src="https://picsum.photos/id/1015/600/400" alt="Foto 1">
+            <div class="caption">Página 1</div>
+        </a>
+        <a href="page2.html">
+            <img src="https://picsum.photos/id/1018/600/400" alt="Foto 2">
+            <div class="caption">Página 2</div>
+        </a>
+        <a href="page3.html">
+            <img src="https://picsum.photos/id/1021/600/400" alt="Foto 3">
+            <div class="caption">Página 3</div>
+        </a>
+        <a href="page4.html">
+            <img src="https://picsum.photos/id/1024/600/400" alt="Foto 4">
+            <div class="caption">Página 4</div>
+        </a>
+    </div>
+    <p style="margin-top: 24px;"><a href="index.html">Voltar para a página principal</a></p>
+</body>
+</html>
