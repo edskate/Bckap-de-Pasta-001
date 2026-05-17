@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Página</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; background:#fff; color:#222 }
+        .container { max-width:900px; margin:0 auto }
+        .photos { display:flex; gap:12px; flex-wrap:wrap; perspective:1200px }
+
+        /* anchor acts as gradient frame (border) around the image */
+        .photos a { display:block; transform-style:preserve-3d; transition: transform 0.35s cubic-bezier(.2,.9,.2,1), box-shadow 0.35s ease; padding:6px; border-radius:12px; background: linear-gradient(135deg,#ff7a7a 0%, #ffd27a 50%, #7ad3ff 100%) }
+
+        /* different gradients per item for variety */
+        .photos a:nth-child(1) { background: linear-gradient(135deg,#ff6b6b 0%,#ffb86b 100%) }
+        .photos a:nth-child(2) { background: linear-gradient(135deg,#ffb547 0%,#ffd76b 100%) }
+        .photos a:nth-child(3) { background: linear-gradient(135deg,#6be26b 0%,#4da6ff 100%) }
+        .photos a:nth-child(4) { background: linear-gradient(135deg,#8e44ad 0%,#ff4da6 100%) }
+
+        .photos img { width:200px; height:130px; object-fit:cover; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.12); transition: transform 0.35s cubic-bezier(.2,.9,.2,1), box-shadow 0.35s ease; transform-origin:center; display:block; border:0 }
+
+        /* pop-out bounce animation */
+        @keyframes pop {
+            0% { transform: translateZ(0) scale(1); }
+            35% { transform: translateZ(38px) scale(1.18); }
+            65% { transform: translateZ(18px) scale(1.06); }
+            100% { transform: translateZ(18px) scale(1.04); }
+        }
+
+        .photos a:hover { transform: rotateX(8deg) rotateY(6deg) translateZ(6px); }
+        .photos a:hover img { transform: translateZ(18px) scale(1.08); box-shadow:0 36px 72px rgba(0,0,0,0.26); animation: pop 420ms cubic-bezier(.2,.9,.2,1) both }
+        .photos a:active { transform: translateY(-8px) translateZ(18px) scale(1.02) }
+        .photos a:focus { outline: none }
+        a.back { display:inline-block; margin-top:18px }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo à nova página</h1>
+        <p>Esta é uma página adicional criada conforme solicitado. Clique nas imagens para abrir páginas relacionadas.</p>
+
+        <div class="photos">
+            <a href="page1.html"><img src="https://picsum.photos/id/1005/400/260" alt="Foto 1"></a>
+            <a href="page2.html"><img src="https://picsum.photos/id/1011/400/260" alt="Foto 2"></a>
+            <a href="page3.html"><img src="https://picsum.photos/id/1016/400/260" alt="Foto 3"></a>
+            <a href="page4.html"><img src="https://picsum.photos/id/1025/400/260" alt="Foto 4"></a>
+        </div>
+
+        <p>
+            <a class="back" href="index.html">« Voltar para a página principal</a>
+            <a class="next" href="index12.html" style="margin-left:18px;">Próxima página »</a>
+        </p>
+    </div>
+</body>
+</html>
